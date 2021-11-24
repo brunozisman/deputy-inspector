@@ -14,10 +14,17 @@ export class HttpService {
   deputados = new BehaviorSubject<Deputados[]>([]);
   currentD = this.deputados.asObservable();
 
+  pages = new BehaviorSubject<number>(1);
+  page = this.pages.asObservable();
+
   constructor(private http: HttpClient) { }
 
   public setDeputados(deputados: Deputados[]): void {
     this.deputados.next(deputados);
+  }
+
+  public resetPage(): void {
+    this.pages.next(1);
   }
 
   getDeputyList(
@@ -28,7 +35,7 @@ export class HttpService {
 
     if(search) {
       params = new HttpParams().set('ordem', ordem).set('search', search);
-    }
+    }    
 
     return this.http.get<APIResponse<Deputados>>(`${env.BASE_URL}/deputados`);
   }

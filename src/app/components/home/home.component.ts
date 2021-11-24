@@ -15,6 +15,10 @@ export class HomeComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
+
+    this.httpService.pages.subscribe(
+      (page) => (this.page = page)
+    );
     
     this.httpService.deputados.subscribe(
       (deputados) => (this.deputados = deputados)

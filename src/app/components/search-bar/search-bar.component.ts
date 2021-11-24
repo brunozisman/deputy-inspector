@@ -51,11 +51,11 @@ export class SearchBarComponent implements OnInit {
   deputados: Deputados[] = [];
 
   ngOnInit(): void {
-
     this.getDeputy();
   }
 
   onSubmit() {
+       this.httpService.resetPage();
        this.getDeputy();
   }
 
