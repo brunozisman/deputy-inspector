@@ -1,0 +1,7 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #fff;
+    height: 100%;
+}

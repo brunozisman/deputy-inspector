@@ -1,0 +1,91 @@
+<div class="container-fluid">
+
+    <form [formGroup]="searchForm" (ngSubmit) ="onSubmit()" class="row justify-content-center m-5">
+        <div class="col-auto m-1">
+            <label for="nome" class="col-form-label">Nome:</label>
+        </div>
+        <div class="col-auto m-1">
+            <input formControlName="nome" type="text" id="nome" class="form-control">
+        </div>
+        <div class="col-auto m-1">
+            <label for="partido" class="col-form-label">Partido:</label>
+        </div>
+        <div class="col-auto m-1">
+            <select formControlName="siglaPartido" class="form-select" id="partido">
+                <option value="" selected>Todos</option>
+                <option value="AVANTE">AVANTE</option>
+                <option value="CIDADANIA">CIDADANIA</option>
+                <option value="DEM">DEM</option>
+                <option value="MDB">MDB</option>
+                <option value="NOVO">NOVO</option>
+                <option value="PATRIOTA">PATRIOTA</option>
+                <option value="PCdoB">PCdoB</option>
+                <option value="PDT">PDT</option>
+                <option value="PL">PL</option>
+                <option value="PODE">PODE</option>
+                <option value="PP">PP</option>
+                <option value="PROS">PROS</option>
+                <option value="PSB">PSB</option>
+                <option value="PSC">PSC</option>
+                <option value="PSD">PSD</option>
+                <option value="PSDB">PSDB</option>
+                <option value="PSL">PSL</option>
+                <option value="PSOL">PSOL</option>
+                <option value="PT">PT</option>
+                <option value="PTB">PTB</option>
+                <option value="PV">PV</option>
+                <option value="REDE">REDE</option>
+                <option value="REPUBLICANOS">REPUBLICANOS</option>
+                <option value="SOLIDARIEDADE">SOLIDARIEDADE</option>
+            </select>
+        </div>
+        <div class="col-auto m-1">
+            <label for="uf" class="col-form-label">UF:</label>
+        </div>
+        <div class="col-auto m-1">
+            <select formControlName="siglaUf" class="form-select" id="uf">
+                <option value="" selected>Todos</option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AM">AM</option>
+                <option value="AP">AP</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MG">MG</option>
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="PR">PR</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="RS">RS</option>
+                <option value="SC">SC</option>
+                <option value="SE">SE</option>
+                <option value="SP">SP</option>
+                <option value="TO">TO</option>
+            </select>
+        </div>
+        <div class="col-auto m-1">
+            <label for="sexo" class="col-form-label">Sexo:</label>
+        </div>
+        <div class="col-auto m-1">
+            <select formControlName="sexo" class="form-select" id="sexo">
+                <option value="" selected>Todos</option>
+                <option value="F">Feminino</option>
+                <option value="M">Masculino</option>
+            </select>
+        </div>
+        <div class="col-auto m-1">
+            <button [routerLink]="['/']" class="btn btn-primary" type="submit">Pesquisar</button>
+        </div>
+    </form>
+</div>

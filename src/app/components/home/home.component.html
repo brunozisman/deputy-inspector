@@ -1,0 +1,33 @@
+
+<div class="container">
+
+
+  <h1 class="text-center mt-5">Deputados</h1>
+  
+  <table class="table table-bordered align-middle text-center m-5">
+      <thead class="table-light">
+        <tr>
+          <th>Foto</th>
+          <th>Nome</th>
+          <th>Partido</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let deputado of deputados | paginate: { itemsPerPage: 10, currentPage: page}">
+          <td><img width="100%" height="100%" src="{{deputado.urlFoto}}"/></td>
+          <td [routerLink]="['/details']" [queryParams]="{id: deputado.id}"><a class="text-decoration-none">{{deputado.nome}}</a></td>
+          <td>{{deputado.siglaPartido}}</td>
+          <td>{{deputado.siglaUf}}</td>
+        </tr>
+      </tbody>
+
+      
+      
+    </table>
+    <section class="w-100">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+    </section>
+
+</div>
