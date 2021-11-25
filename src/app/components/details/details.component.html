@@ -19,8 +19,8 @@
         </section>
         <section>
             <p><b>Início:</b> {{ ultimoEvento.dataHoraInicio | date : 'dd/MM/yyyy HH:mm' }}</p>
-            <p *ngIf="ultimoEvento.dataHoraFim"><b>Fim:</b> {{ ultimoEvento.dataHoraFim }} </p>
-            <p *ngIf="!ultimoEvento.dataHoraFim"><b>Fim:</b> {{ ultimoEvento.situacao }} </p>
+            <p *ngIf="ultimoEvento.dataHoraFim"><b>Fim:</b> {{ ultimoEvento.dataHoraFim | date : 'dd/MM/yyyy HH:mm' }} </p>
+            <p *ngIf="!ultimoEvento.dataHoraFim"><b>Fim:</b> {{ ultimoEvento.situacao}} </p>
             <p><b>Tipo do evento:</b> {{ ultimoEvento.descricaoTipo }}</p>
         </section>
     </div>

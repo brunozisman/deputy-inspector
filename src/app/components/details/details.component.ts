@@ -72,7 +72,7 @@ export class DetailsComponent implements OnInit {
   {
     const proxEvents = evento.filter(x => {
 
-      return (x.situacao !== "Em Andamento" && x.situacao !== "Encerrada" && x.situacao !== "Cancelada" && x.situacao !== "Encerrada (Final)" && x.situacao !== "Não Confirmada")
+      return (x.situacao !== "Em Andamento" && x.situacao !== "Encerrada" && x.situacao !== "Encerrada (Final)")
     });
 
     this.proxEvento = proxEvents[0];
@@ -83,6 +83,16 @@ export class DetailsComponent implements OnInit {
       {
         this.proxEvento = proxEvents[i];
       }
+    }
+    console.log(this.proxEvento.dataHoraInicio.toString());
+    console.log(new Date().toISOString());
+    
+
+    if(this.proxEvento.dataHoraInicio.toString() < new Date().toISOString())
+    {
+      console.log('asdasd');
+      
+      this.proxEvento = undefined;
     }
   }
 }
