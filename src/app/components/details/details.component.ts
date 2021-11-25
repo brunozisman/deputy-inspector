@@ -72,7 +72,7 @@ export class DetailsComponent implements OnInit {
   {
     const proxEvents = evento.filter(x => {
 
-      return (x.situacao !== "Em Andamento" && x.situacao !== "Encerrada" && x.situacao !== "Cancelada" && x.situacao !== "Encerrada (Final)")
+      return (x.situacao !== "Em Andamento" && x.situacao !== "Encerrada" && x.situacao !== "Cancelada" && x.situacao !== "Encerrada (Final)" && x.situacao !== "Não Confirmada")
     });
 
     this.proxEvento = proxEvents[0];
